@@ -66,8 +66,9 @@ unified_auth_index/
     ├── databnf_rameau_nt.tar.gz        # RAMEAU (BnF, N-Triples)
     ├── subjects.skosrdf.ttl            # LCSH (Library of Congress, SKOS-RDF)
     ├── materias.nt                     # BNE (Biblioteca Nacional de España)
-    ├── mapping-authorities-gnd-lcsh-ram_lds.jsonld.gz  # DNB cross-authority mappings
-    └── SBT-THESAURUS-csv.csv           # SBT local thesaurus (SLSP additions to NS)
+    ├── mapping-authorities-gnd-lcsh-ram_lds.jsonld.gz  # DNB cross-authority mappings with LCSH and RAMEAU
+    ├── mapping-authorities-gnd-nsogg_lds.jsonld.gz  # DNB cross-authority mappings with NS
+    └── SBT-THESAURUS-csv.csv           # SBT local thesaurus (local additions to NS, not provided)
 ```
 
 The build pipeline parses all source files and produces a single reconciliation index through a four-pass clustering algorithm (see [Architecture notes](#architecture-notes) below). Build time is a few minutes on a standard laptop; updates are expected 1–2 times per year as source authority files are refreshed.
