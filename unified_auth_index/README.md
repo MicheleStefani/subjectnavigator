@@ -1,6 +1,7 @@
 ### Data sources:
 
-The `unified_index_core.json` is built using available data from NS, LCSH, BNE, GND EdRef/RAMEAU:
+The `unified_index_core.json` is built using available data (not provided) from NS, LCSH, BNE, GND IdRef/RAMEAU.
+Data used can be found at:
 - lcsh [https://id.loc.gov/download/authorities/subjects.skosrdf.ttl.gz](https://id.loc.gov/download/authorities/subjects.skosrdf.ttl.gz) [uncompressed],
 - bne  [https://datos.bne.es/datadumps/materias.nt.bz2](https://datos.bne.es/datadumps/materias.nt.bz2) [uncompressed],
 - gnd  [https://data.dnb.de/opendata/authorities-gnd-sachbegriff_lds.ttl.gz](https://data.dnb.de/opendata/authorities-gnd-sachbegriff_lds.ttl.gz) [compressed],
