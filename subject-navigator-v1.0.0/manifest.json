@@ -1,0 +1,73 @@
+{
+  "manifest_version": 3,
+  "name": "Subject Navigator for swisscovery",
+  "version": "1.0.0",
+  "description": "Navigazione gerarchica multilingue dei soggetti controllati (Nuovo Soggettario BNCF, GND, RAMEAU, LCSH) e della classificazione (CDU, CDD) per i cataloghi swisscovery/SLSP e reperio.",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://swisscovery.ch/*",
+    "https://*.swisscovery.ch/*",
+    "https://*.swisscovery.slsp.ch/*",
+    "https://*.swisscovery.org/*",
+    "https://reperio.usi.ch/*",
+    "https://explore.lib.unige.ch/*",
+    "https://www.wikidata.org/*",
+    "https://query.wikidata.org/*",
+    "https://digitale.bncf.firenze.sbn.it/*",
+    "https://vocab.getty.edu/*",
+    "https://lobid.org/*",
+    "https://www.idref.fr/*",
+    "https://data.bnf.fr/*",
+    "https://datos.bne.es/*",
+    "https://id.loc.gov/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Subject Navigator",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "sidebar.css",
+        "unified_index_core.json",
+        "labels_de.json",
+        "labels_fr.json",
+        "labels_en_slim.json",
+        "labels_es_slim.json",
+        "hierarchy_gnd.json",
+        "hierarchy_bnf.json",
+        "vocab_cdu.json",
+        "vocab_cdd.json",
+        "vocab_geo.json"
+      ],
+      "matches": [
+        "https://swisscovery.ch/*",
+        "https://*.swisscovery.ch/*",
+        "https://*.swisscovery.slsp.ch/*",
+        "https://*.swisscovery.org/*",
+        "https://reperio.usi.ch/*",
+        "https://explore.lib.unige.ch/*"
+      ]
+    }
+  ]
+}
