@@ -179,3 +179,9 @@ SBT (*[Soggettario del Sistema Bibliotecario Ticinese](https://www2.sbt.ti.ch/so
 Code: MIT
 
 Index data is derived from sources with their own licenses (see [Data sources](#data-sources)). All source authority files are open data. The derived index inherits the most restrictive applicable license among its sources (CC BY).
+
+## Development notes
+
+The domain knowledge, institutional context, architectural decisions, and overall direction of this project are entirely the author's. The reconciliation logic, the four-pass clustering algorithm, the confidence grading model, and the extension's interaction design were conceived and validated by the author through direct engagement with the source authority files and the catalog.
+
+The technical implementation — writing and debugging the Python build pipeline, the JavaScript content script, and the CSS — was carried out with [Claude](https://claude.ai) (Anthropic) as a coding assistant, working under continuous review and correction. All generated code was verified against real data and iteratively refined; nothing was adopted without understanding and deliberate choice.
