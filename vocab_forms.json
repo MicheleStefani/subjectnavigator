@@ -1,0 +1,349 @@
+{
+ "v": 1,
+ "source": "EQUIVALENZE_FORME_rivista.csv",
+ "note": "655 form/genre equivalences: SLSP official triples, rows reviewed by hand, SLSP RDA table candidates",
+ "forms": [
+  {
+   "de": "Ausstellungskatalog",
+   "fr": "Catalogues d'exposition",
+   "idref": "027320456",
+   "it": "Cataloghi di esposizioni",
+   "en": "Exhibition catalogs",
+   "status": "slsp",
+   "es": "Catálogos de exposiciones",
+   "aliases": [
+    "Catalogue d'exposition"
+   ]
+  },
+  {
+   "de": "Bildband",
+   "fr": "Ouvrages illustrés",
+   "idref": "027791491",
+   "it": "Libri illustrati",
+   "en": "Illustrated works",
+   "status": "slsp",
+   "es": "Obras ilustradas"
+  },
+  {
+   "de": "Monografische Reihe",
+   "fr": "Collections éditoriales",
+   "idref": "027444929",
+   "it": "Collane editoriali",
+   "status": "slsp"
+  },
+  {
+   "de": "Konferenzschrift",
+   "fr": "Actes de congrès",
+   "idref": "02886431X",
+   "it": "Atti di congressi",
+   "en": "Conference papers and proceedings",
+   "status": "slsp"
+  },
+  {
+   "de": "Hochschulschrift",
+   "fr": "Thèses et écrits académiques",
+   "idref": "027253139",
+   "it": "Tesi",
+   "en": "Academic theses",
+   "status": "slsp",
+   "es": "Tesis y escritos académicos"
+  },
+  {
+   "de": "Zeitschrift",
+   "fr": "Périodiques",
+   "idref": "02724640X",
+   "it": "Periodici",
+   "en": "Periodicals",
+   "status": "slsp",
+   "es": "Revistas"
+  },
+  {
+   "de": "Quelle",
+   "fr": "Sources",
+   "idref": "027537161",
+   "it": "Fonti",
+   "en": "Sources",
+   "status": "confirmed"
+  },
+  {
+   "de": "Festschrift",
+   "fr": "Mélanges et hommages",
+   "idref": "027414248",
+   "it": "Scritti in onore",
+   "en": "Festschriften",
+   "status": "slsp",
+   "es": "Homenajes",
+   "aliases": [
+    "Mélanges",
+    "Miscellanea, scritti in onore"
+   ]
+  },
+  {
+   "de": "Biografie",
+   "fr": "Biographie",
+   "idref": "027281558",
+   "it": "Biografie",
+   "en": "Biographies",
+   "status": "slsp",
+   "es": "Biografías"
+  },
+  {
+   "de": "Kunstführer",
+   "fr": "Guides touristiques et de visite",
+   "idref": "027804720",
+   "it": "Guide",
+   "en": "Guidebooks",
+   "status": "confirmed",
+   "es": "Guías turísticas"
+  },
+  {
+   "de": "Werkverzeichnis",
+   "fr": "Catalogues raisonnés",
+   "idref": "029079764",
+   "it": "Cataloghi ragionati",
+   "en": "Catalogues raisonnés",
+   "status": "confirmed",
+   "es": "Catálogos razonados"
+  },
+  {
+   "de": "Bibliografie",
+   "fr": "Bibliographie",
+   "idref": "027229386",
+   "it": "Bibliografie",
+   "en": "Bibliographies",
+   "status": "slsp",
+   "es": "Bibliografías"
+  },
+  {
+   "de": "Kommentar",
+   "fr": "Commentaire de texte",
+   "idref": "027790681",
+   "it": "Commenti",
+   "status": "confirmed",
+   "es": "Comentarios de textos"
+  },
+  {
+   "de": "Wörterbuch",
+   "fr": "Dictionnaires",
+   "idref": "027232050",
+   "it": "Dizionari",
+   "en": "Dictionaries",
+   "status": "confirmed",
+   "es": "Diccionarios"
+  },
+  {
+   "de": "Briefsammlung",
+   "fr": "Correspondance",
+   "idref": "027490122",
+   "it": "Corrispondenza",
+   "en": "Personal correspondence",
+   "status": "confirmed",
+   "es": "Cartas"
+  },
+  {
+   "de": "DVD-Video",
+   "fr": "DVD",
+   "idref": "035108444",
+   "it": "DVD",
+   "en": "DVDs",
+   "status": "confirmed",
+   "es": "DVD"
+  },
+  {
+   "de": "Anthologie",
+   "fr": "Anthologies",
+   "idref": "027269493",
+   "it": "Antologie",
+   "en": "Anthologies",
+   "status": "confirmed",
+   "es": "Antologías"
+  },
+  {
+   "de": "Katalog",
+   "fr": "Catalogues",
+   "idref": "027793222",
+   "it": "Cataloghi",
+   "en": "Catalogs",
+   "status": "confirmed",
+   "es": "Catálogos"
+  },
+  {
+   "de": "Interview",
+   "fr": "Entretiens",
+   "idref": "027235246",
+   "it": "Interviste",
+   "en": "Interviews",
+   "status": "confirmed",
+   "es": "Entrevistas"
+  },
+  {
+   "de": "Verzeichnis",
+   "fr": "Répertoires",
+   "idref": "028662180",
+   "it": "Repertori",
+   "en": "Directories",
+   "status": "confirmed",
+   "es": "Directorios"
+  },
+  {
+   "de": "Inventar",
+   "fr": "Inventaires",
+   "idref": "027806413",
+   "it": "Inventari",
+   "en": "Inventories",
+   "status": "confirmed",
+   "es": "Inventarios"
+  },
+  {
+   "de": "Autobiografie",
+   "fr": "Autobiographie",
+   "idref": "02759436X",
+   "it": "Autobiografie",
+   "en": "Autobiographies",
+   "status": "slsp",
+   "es": "Autobiografías"
+  },
+  {
+   "de": "Lehr- und Lernressource",
+   "fr": "Manuels d'enseignement",
+   "idref": "027446514",
+   "it": "Testi scolastici",
+   "en": "Textbooks",
+   "status": "slsp",
+   "es": "Libros de texto"
+  },
+  {
+   "de": "Künstlerbuch",
+   "fr": "Livres d'artistes",
+   "idref": "027461513",
+   "it": "Libri d'artista",
+   "en": "Artists' books",
+   "status": "confirmed",
+   "es": "Libros de artista"
+  },
+  {
+   "de": "Atlas",
+   "fr": "Atlas",
+   "idref": "027280810",
+   "it": "Atlanti",
+   "en": "Atlases",
+   "status": "confirmed",
+   "es": "Atlas"
+  },
+  {
+   "de": "Forschungsbericht",
+   "fr": "Publications officielles",
+   "idref": "027241769",
+   "it": "Pubblicazioni ufficiali",
+   "status": "confirmed"
+  },
+  {
+   "de": "Konkordanz",
+   "fr": "Concordances",
+   "idref": "027230686",
+   "it": "Concordanze",
+   "en": "Concordances",
+   "status": "confirmed",
+   "es": "Concordancias"
+  },
+  {
+   "de": "Enzyklopädie",
+   "fr": "Encyclopédies",
+   "idref": "028638166",
+   "it": "Enciclopedie",
+   "en": "Encyclopedias",
+   "status": "confirmed",
+   "es": "Enciclopedias"
+  },
+  {
+   "de": "Statistik",
+   "fr": "Statistiques",
+   "idref": "028627008",
+   "it": "Statistiche",
+   "en": "Statistics",
+   "status": "confirmed",
+   "es": "Estadísticas"
+  },
+  {
+   "de": "Tagebuch",
+   "fr": "Journaux intimes",
+   "idref": "027235696",
+   "it": "Diari",
+   "en": "Diaries",
+   "status": "confirmed",
+   "es": "Diarios personales"
+  },
+  {
+   "de": "Comic",
+   "fr": "Bandes dessinées",
+   "idref": "027220796",
+   "it": "Fumetti",
+   "status": "slsp",
+   "es": "Cómics",
+   "aliases": [
+    "Bande dessinée",
+    "Fumetto"
+   ]
+  },
+  {
+   "de": "Bilderbuch für Kinder",
+   "fr": "Album pour la jeunesse",
+   "it": "Album per bambini",
+   "status": "candidate-rda"
+  },
+  {
+   "de": "Kunstbuch",
+   "fr": "Livre d'art",
+   "it": "Libro d'arte",
+   "status": "candidate-rda"
+  },
+  {
+   "de": "Wiederkehrende Ausstellung",
+   "fr": "Exposition récurrente",
+   "it": "Esposizione ricorrente",
+   "status": "candidate-rda"
+  },
+  {
+   "de": "Begleitpublikation zu Ausstellung",
+   "fr": "Publication accompagnant l'exposition",
+   "it": "Pubblicazione di accompagnamento alla mostra",
+   "status": "candidate-rda"
+  },
+  {
+   "de": "Bestandskatalog",
+   "fr": "Catalogue de collection",
+   "it": "Catalogo della collezione",
+   "status": "candidate-rda"
+  },
+  {
+   "de": "Künstlervereinigung",
+   "fr": "Collectif d'artistes",
+   "it": "Collettivo di artisti",
+   "status": "candidate-rda"
+  },
+  {
+   "de": "Werk über einen Künstler",
+   "fr": "Œuvre sur un artiste",
+   "it": "Opera su un artista",
+   "status": "candidate-rda"
+  },
+  {
+   "de": "Dissertation - Online",
+   "fr": "Thèse - en ligne",
+   "it": "Tesi - online",
+   "status": "candidate-rda"
+  },
+  {
+   "de": "Nummerierte Dissertation - Pflichtausgabe",
+   "fr": "Thèse numérotée - exemplaire de thèse",
+   "it": "Tesi numerata",
+   "status": "candidate-rda"
+  },
+  {
+   "de": "Dissertation - Verlagsausgabe",
+   "fr": "Thèse - édition commerciale",
+   "it": "Tesi - edizione commerciale",
+   "status": "candidate-rda"
+  }
+ ]
+}

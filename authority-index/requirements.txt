@@ -1,0 +1,4 @@
+# Index generator (build_index.py) — tested with Python 3.11.5.
+# requests is needed by the Wikidata enrichment step: without it the
+# generator skips that step without stopping, and the index differs.
+requests>=2.32

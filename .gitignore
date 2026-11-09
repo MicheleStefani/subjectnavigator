@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+# generator output, caches and source dumps (dumps are downloaded by hand,
+# see REBUILD.md; only the folder's README is in the repository)
+authority-index/output*/
+authority-index/parser-cache/
+authority-index/data/*
+!authority-index/data/README.md
+authority-index/build_metadata.json
+# the authority index the extension loads: generated, ~54 MB, shipped in the
+# release zip (scripts/make_release.py), never committed
+unified_index_core.json
+labels_de.json
+labels_en_slim.json
+labels_es_slim.json
+rameau_idref.json
+hierarchy_gnd.json
+notes_gnd.json
+notes_rameau.json
+exact_links.json
+# release zips
+release/
+~$*
