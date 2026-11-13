@@ -37,8 +37,12 @@ function parsePageUrl(url) {
   const m = docId.match(/alma(\d+)/);
   const rawInstCode = vid.split(':')[0] || '';
   const instCode = /^[\w-]{1,50}$/.test(rawInstCode) ? rawInstCode : '';
+  // searchLang: the page's own ?lang= (same whitelist), passed on to search
+  // links so the results keep the language the user chose; empty when the
+  // page has none (the catalogue then uses its default).
+  const searchLang = p.get('lang') && lang === rawLang.substring(0, 2) ? lang : '';
   return { recordId: docId, docId, vid, instCode, mmsId: m ? m[1] : '', isFullDisplay: u.pathname.includes('/fulldisplay'), lang,
-    host: u.hostname, tab: p.get('tab'), scope: p.get('search_scope') };
+    host: u.hostname, tab: p.get('tab'), scope: p.get('search_scope'), searchLang };
 }
 
 function isRecordPage(page) {
@@ -49,12 +53,19 @@ function isRecordPage(page) {
 // (network zone or institution).
 function siteSearchContext(page) {
   const vid = page.vid || '';
-  return {
+  const ctx = {
     host: page.host,
     vid: vid || DEFAULT_SEARCH_CTX.vid,
     tab: page.tab || (vid.includes('NETWORK') ? '41SLSP_NETWORK' : page.instCode + '_MyInst_and_CI'),
     scope: page.scope || (vid.includes('NETWORK') ? 'DN_and_CI' : 'MyInst_and_CI')
   };
+  if (page.searchLang) ctx.lang = page.searchLang;
+  return ctx;
+}
+
+// &lang=… of a search link: the language of the page, when it had one.
+function searchLangParam(ctx) {
+  return ctx.lang ? '&lang=' + encodeURIComponent(ctx.lang) : '';
 }
 
 // MARC comes from Alma's SRU, asked by the worker (bg_site.js, marcSources).
@@ -66,7 +77,7 @@ function marcRequestParams(page) {
 // for each record by cs_main.js): 'sub' = subject index, 'any' = keywords.
 function buildSearchUrl(q, mode) {
   const idx = mode === 'broad' ? 'any' : 'sub';
-  return 'https://' + searchCtx.host + '/discovery/search?query=' + idx + ',contains,' + encodeURIComponent(q) + '&tab=' + encodeURIComponent(searchCtx.tab) + '&search_scope=' + encodeURIComponent(searchCtx.scope) + '&vid=' + encodeURIComponent(searchCtx.vid);
+  return 'https://' + searchCtx.host + '/discovery/search?query=' + idx + ',contains,' + encodeURIComponent(q) + '&tab=' + encodeURIComponent(searchCtx.tab) + '&search_scope=' + encodeURIComponent(searchCtx.scope) + '&vid=' + encodeURIComponent(searchCtx.vid) + searchLangParam(searchCtx);
 }
 
 // BAAM and DDC numbers are in local Primo fields of the catalogue:
@@ -75,5 +86,5 @@ const CLASS_SEARCH_FIELDS = { baam: 'lds49', cdd: 'lds56' };
 function classFieldSearchUrl(ctx, field, value) {
   return 'https://' + ctx.host + '/discovery/search?query=' + field + ',contains,'
     + encodeURIComponent(value)
-    + '&tab=' + encodeURIComponent(ctx.tab) + '&search_scope=' + encodeURIComponent(ctx.scope) + '&vid=' + encodeURIComponent(ctx.vid) + '&mode=advanced';
+    + '&tab=' + encodeURIComponent(ctx.tab) + '&search_scope=' + encodeURIComponent(ctx.scope) + '&vid=' + encodeURIComponent(ctx.vid) + searchLangParam(ctx) + '&mode=advanced';
 }

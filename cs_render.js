@@ -916,7 +916,9 @@ function updateAndBuilder() {
   const urlSub = selected.length >= 2 ? buildCrossAndUrl(selected, 'subject') : singleUrl('subject');
   const urlAny = selected.length >= 2 ? buildCrossAndUrl(selected, 'broad') : singleUrl('broad');
 
-  const terms = selected.map(r => r.controlledLabels?.it || r.controlledLabels?.de || r.controlledLabels?.fr || r.label || '?').join(' + ');
+  // The button names the terms as the chips do (bold): the record's own
+  // headings, in the cataloguer's language — the search covers all languages.
+  const terms = selected.map(r => [r.label || '?', ...(r.andSiblings || []).map(x => x.label)].join(' · ')).join(' + ');
   const acts = el('div', { className: 'acts', style: { marginTop: '4px' } });
   if (urlSub) acts.appendChild(el('button', { className: 'act act-pri', 'data-action': 'runand', 'data-url': urlSub, textContent: L.buildQuery + ': ' + terms }));
   if (urlAny) acts.appendChild(el('button', { className: 'act', 'data-action': 'runand', 'data-url': urlAny, textContent: L.buildQueryBroad }));

@@ -595,6 +595,15 @@ const $w = expr => vm.runInContext(expr, W);
       const query = url ? q(url) : '';
       check('default AND = the two ticked chips (Architettura, Italia), not the form',
         query === '("Architettura" AND "Italia")', query || made.filter(n => n.classList.contains('and-chip')).length);
+      // The button text names the record's headings (as the chips), not the Italian labels.
+      $(`allReconciledResults = [
+        { label: 'Dach', termType: 'topic', controlledLabels: { it: 'Tetti', de: 'Dach' } },
+        { label: 'Dachkonstruktion', termType: 'topic', controlledLabels: { de: 'Dachkonstruktion' } }
+      ]; allNameResults = [];`);
+      $(`renderAndBuilder(__byId('sn-crossAnd'))`);
+      const btn2 = made.filter(n => n.attrs && n.classList.contains('act-pri')).pop();
+      const text2 = btn2 ? btn2.textContent : '';
+      check('combined button names the record headings', text2.endsWith(': Dach + Dachkonstruktion'), text2);
     } catch (e) {
       check('renderAndBuilder with minimal DOM', false, e.message);
     }
@@ -1644,11 +1653,23 @@ const $w = expr => vm.runInContext(expr, W);
       tryC("isRecordPage(parsePageUrl('https://swisscovery.ch/discovery/search?query=any,contains,x&vid=41SLSP_NETWORK:VU1_UNION'))") === false);
     check('the page gives a record id', tryC('parsePageUrl(' + JSON.stringify(NZ) + ').recordId') === 'alma991');
     r = tryC('siteSearchContext(parsePageUrl(' + JSON.stringify(NZ) + '))');
-    check('search context, network view', JSON.stringify(r) === JSON.stringify({ host: 'swisscovery.ch', vid: '41SLSP_NETWORK:VU1_UNION', tab: '41SLSP_NETWORK', scope: 'DN_and_CI' }), r);
+    check('search context, network view', JSON.stringify(r) === JSON.stringify({ host: 'swisscovery.ch', vid: '41SLSP_NETWORK:VU1_UNION', tab: '41SLSP_NETWORK', scope: 'DN_and_CI', lang: 'fr' }), r);
     r = tryC('siteSearchContext(parsePageUrl(' + JSON.stringify(IZ) + '))');
     check('search context, institution view', JSON.stringify(r) === JSON.stringify({ host: 'swisscovery.ch', vid: '41SLSP_USI:VU1', tab: '41SLSP_USI_MyInst_and_CI', scope: 'MyInst_and_CI' }), r);
     r = tryC('siteSearchContext(parsePageUrl(' + JSON.stringify(IZ + '&tab=T1&search_scope=S1') + '))');
     check('tab and scope of the page win', r && r.tab === 'T1' && r.scope === 'S1', r);
+    $(`searchCtx = ${JSON.stringify(tryC('siteSearchContext(parsePageUrl(' + JSON.stringify(NZ) + '))'))}`);
+    r = $(`buildSearchUrl('Tetti', 'subject')`);
+    check('search link keeps the page language', r.endsWith('&vid=41SLSP_NETWORK%3AVU1_UNION&lang=fr'), r);
+    r = $(`classFieldSearchUrl(searchCtx, 'lds49', '72')`);
+    check('class search link keeps the page language', r.includes('&lang=fr&mode=advanced'), r);
+    r = tryC('siteSearchContext(parsePageUrl(' + JSON.stringify(IZ) + '))');
+    $(`searchCtx = ${JSON.stringify(r)}`);
+    check('no page language, no lang in the search link', !$(`buildSearchUrl('Tetti', 'subject')`).includes('lang='));
+    r = tryC('siteSearchContext(parsePageUrl(' + JSON.stringify(IZ + '&lang=en_US') + '))');
+    check('page language en_US → lang=en', r && r.lang === 'en', r);
+    r = tryC('siteSearchContext(parsePageUrl(' + JSON.stringify(IZ + '&lang=xx') + '))');
+    check('unsupported page language → no lang', r && !('lang' in r), r);
     r = tryC('marcRequestParams(parsePageUrl(' + JSON.stringify(IZ) + '))');
     check('MARC request parameters', JSON.stringify(r) === JSON.stringify({ docId: 'alma992', mmsId: '992', vid: '41SLSP_USI:VU1', instCode: '41SLSP_USI', pageHost: 'swisscovery.ch' }), r);
 
